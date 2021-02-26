@@ -1,0 +1,33 @@
+CS3052 P1
+
+Things to test
+
+input file empty
+first line number malformed
+first line negative
+too few input lines
+input lines malformed
+
+two points
+three points
+ten points
+1000 points
+
+points already sorted by x
+points already sorted by y
+outliers and then a bunch (recursive).
+points spread out in y only
+closest are first two, last two, first & last.
+
+
+closest distance > 10^6
+closest distance < 10^-6
+
+
+
+              
+
+
+
+
+
