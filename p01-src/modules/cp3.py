@@ -59,12 +59,12 @@ def closestAcross(space, median, minDistance):
             boundary.append(point)
 
     #Compares all the y sorted to the most significant y coordinates
-    for i in range(len(ySorted)):
+    for i in range(len(boundary)):
         #Only chooses 6 or number left
-        for j in range(1, min(7, len(ySorted) - i)):
-            tempDistance = distance(ySorted[i], ySorted[i + j])
+        for j in range(1, min(7, len(boundary) - i)):
+            tempDistance = distance(boundary[i], boundary[i + j])
             if tempDistance < minDistance[0]:
-                minDistance = tempDistance, ySorted[i], ySorted[i + j]
+                minDistance = tempDistance, boundary[i], boundary[i + j]
 
     #returns the true minimum of space
     return minDistance
