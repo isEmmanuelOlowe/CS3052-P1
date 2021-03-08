@@ -56,9 +56,13 @@ def processData():
                     raise Exception
                 else:    
                     data.append([float(items[0]), float(items[1])])
-        #returns formatted data
+        #in the event the file is empty
+        if length == 0:
+            raise Exception
+        #in event error in the length and size of the data
         if length != len(data):
             raise Exception
+        #returns formatted data
         return data
     except:
         #returns [] if an exception has been generated.
