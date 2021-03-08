@@ -25,30 +25,25 @@ def ClosestPoints(space):
     ySorted = left[1]
     i = 0
     j = 0
-    while j < len(right[1]):
-        if ySorted[i][1] > right[1][j][1]:
-            ySorted.insert(i, right[1][j])
-            j += 1
-        i += 1
-        if i == len(ySorted):
-            for k in range(j, len(right[1])):
-                ySorted.append(right[1][k])
-            break
+    # while j < len(right[1]):
+    #     if ySorted[i][1] > right[1][j][1]:
+    #         ySorted.insert(i, right[1][j])
+    #         j += 1
+    #     i += 1
+    #     if i == len(ySorted):
+    #         for k in range(j, len(right[1])):
+    #             ySorted.append(right[1][k])
+    #         break
 
-
-    # for pointL in left[1]:
-    #     for pointR in right[1]:
-    #         if pointL[1] > pointR[1]:
-    #             ySorted.append(pointR)
-    #         else:
-    #             ySorted.append(pointL)
+    # if sorted(space) != sorted(ySorted):
+    #     print("Aiuto")
     #Determines which one outputs the lowest distance
     minDistance = minD(left[0], right[0])
 
     #finds the smallest across boundary
     #compares it the smallest distance discovered so far
     #returns the smallest
-    return closestAcross(ySorted, median, minDistance), ySorted
+    return closestAcross(space, median, minDistance), ySorted
 
 
 '''
