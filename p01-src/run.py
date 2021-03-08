@@ -45,7 +45,7 @@ def processData():
             if head == True:
                 length = int(line)
                 #checks the length of the file is valid
-                if length < 0:
+                if length < 1:
                     raise Exception
                 head = False
             else:
