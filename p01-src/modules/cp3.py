@@ -11,7 +11,8 @@ def ClosestPoints(space):
     length = len(space)
     #brute forces for values small than this
     if length <= 3:
-        return closestPointsBF(space)
+        space.sort()
+        return closestPointsBF(space), space
 
     median = math.floor(len(space)/2)
     #spliting the space into 2 halves seperated by the median
@@ -19,13 +20,22 @@ def ClosestPoints(space):
     left = ClosestPoints(space[:median])
     right = ClosestPoints(space[median:])
 
+    #Merge to maintain the y sorted nature
+    ySorted = []
+
+    for pointL in left[3]:
+        for pointR in right[3]:
+            if pointL > pointR:
+                ySorted.append(pointR)
+            else:
+                ySorted.append(pointL)
     #Determines which one outputs the lowest distance
     minDistance = minD(left, right)
 
     #finds the smallest across boundary
     #compares it the smallest distance discovered so far
     #returns the smallest
-    return closestAcross(space, median, minDistance)
+    return closestAcross(ySorted, median, minDistance)
 
 
 '''
@@ -47,9 +57,6 @@ def closestAcross(space, median, minDistance):
     for point in space:
         if space[median][0] - minDistance[0] < point[0] < space[median][0] + minDistance[0]:
             boundary.append(point)
-
-    #Sorts the set by y coordinates
-    ySorted = sorted(boundary, key=lambda x: x[1])
 
     #Compares all the y sorted to the most significant y coordinates
     for i in range(len(ySorted)):
