@@ -57,7 +57,7 @@ def closestAcross(space, median, minDistance):
         for j in range(1, min(7, len(ySorted) - i)):
             tempDistance = distance(ySorted[i], ySorted[i + j])
             if tempDistance < minDistance[0]:
-                minDistance = tempDistance, ySorted[i], ySorted[i +j]
+                minDistance = tempDistance, ySorted[i], ySorted[i + j]
 
     #returns the true minimum of space
     return minDistance
