@@ -57,6 +57,8 @@ def processData():
                 else:    
                     data.append([float(items[0]), float(items[1])])
         #returns formatted data
+        if length != len(data)
+            raise Exception
         return data
     except:
         #returns [] if an exception has been generated.
