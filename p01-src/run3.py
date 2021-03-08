@@ -18,15 +18,18 @@ def Main():
     else:
         data.sort()
         #Generates the closests points
-        distance = ClosestPoints(data)[0]
-        #Formatting the distance into the correct format
-        significant_digits = 9
-        ##Presenting the number to 9 SF
-        rounded_distnace = round(
-            distance, significant_digits - int(math.floor(math.log10(abs(distance)))) - 1)
-        if rounded_distnace > 99999999:
-            rounded_distnace = int(rounded_distnace)
-        print(rounded_distnace)
+        distance = ClosestPoints(data)[0][0]
+        if distance == 0:
+            print("0")
+        else:
+            #Formatting the distance into the correct format
+            significant_digits = 9
+            ##Presenting the number to 9 SF
+            rounded_distnace = round(
+                distance, significant_digits - int(math.floor(math.log10(abs(distance)))) - 1)
+            if rounded_distnace > 99999999:
+                rounded_distnace = int(rounded_distnace)
+            print(rounded_distnace)
 
 
 '''
