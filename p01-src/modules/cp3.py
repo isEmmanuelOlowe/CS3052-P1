@@ -21,20 +21,20 @@ def ClosestPoints(space):
     left = ClosestPoints(space[:median])
     right = ClosestPoints(space[median:])
 
-    #Merge to maintain the y sorted nature
-    # ySorted = left[1]
-    # i = 0
-    # j = 0
-    # while j < len(right[1]):
-    #     if ySorted[i][1] > right[1][j][1]:
-    #         ySorted.insert(i, right[1][j])
-    #         j += 1
-    #     i += 1
-    #     if i == len(ySorted):
-    #         for k in range(j, len(right[1])):
-    #             ySorted.append(right[1][k])
-    #         break
-    ySorted = sorted(space, key=lambda x: x[1])
+    #Merge to maintain the sorted y
+    ySorted = left[1]
+    i = 0
+    j = 0
+    while j < len(right[1]):
+        if ySorted[i][1] > right[1][j][1]:
+            ySorted.insert(i, right[1][j])
+            j += 1
+        i += 1
+        if i == len(ySorted):
+            for k in range(j, len(right[1])):
+                ySorted.append(right[1][k])
+            break
+
     if sorted(space) != sorted(ySorted):
         print("Aiuto")
     #Determines which one outputs the lowest distance
