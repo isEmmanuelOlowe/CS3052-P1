@@ -15,8 +15,8 @@ def ClosestPoints(space):
 
     #spliting the space into 2 halves seperated by the median
     #running closest points recursively on them
-    left = ClosestPoints(space[:median])
-    right = ClosestPoints(space[median:])
+    left = ClosestPoints(space[:math.floor(len(space)/2)])
+    right = ClosestPoints(space[math.floor(len(space)/2):])
 
     #Determines which one outputs the lowest distance
     minDistance = minD(left, right)
