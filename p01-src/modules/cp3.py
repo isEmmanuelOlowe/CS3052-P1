@@ -23,14 +23,14 @@ def ClosestPoints(space):
     #Merge to maintain the y sorted nature
     ySorted = []
 
-    for pointL in left[3]:
-        for pointR in right[3]:
+    for pointL in left[1]:
+        for pointR in right[1]:
             if pointL > pointR:
                 ySorted.append(pointR)
             else:
                 ySorted.append(pointL)
     #Determines which one outputs the lowest distance
-    minDistance = minD(left, right)
+    minDistance = minD(left[0], right[0])
 
     #finds the smallest across boundary
     #compares it the smallest distance discovered so far
