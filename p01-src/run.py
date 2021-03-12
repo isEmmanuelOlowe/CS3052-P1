@@ -1,8 +1,6 @@
 import sys
 import math
-from modules.quickSelect import QuickSelect
 from modules.closestPointsDNQ import ClosestPoints
-from modules.bruteForce import closestPointsBF
 
 
 '''
