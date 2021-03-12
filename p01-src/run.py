@@ -19,10 +19,10 @@ def Main():
         #Formatting the distance into the correct format
         significant_digits = 9
         ##Presenting the number to 9 SF
-        rounded_distnace = round(distance, significant_digits - int(math.floor(math.log10(abs(distance)))) - 1)
-        if rounded_distnace  > 99999999:
-            rounded_distnace = int(rounded_distnace)
-        print(rounded_distnace)
+        rounded_distance = round(distance, significant_digits - int(math.floor(math.log10(abs(distance)))) - 1)
+        if rounded_distance  > 99999999:
+            rounded_distance = int(rounded_distance)
+        print(rounded_distance)
 
 '''
 This method process the incoming data converts it to a 2D array
